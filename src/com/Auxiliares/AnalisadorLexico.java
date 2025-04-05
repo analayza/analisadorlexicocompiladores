@@ -95,10 +95,18 @@ public class AnalisadorLexico {
 		    }break;
 
 		    case '-': {
+				int proximoChar = pegardoBuffer();
 
-				estado = 50;
-				tipoAtual = Token.LAMBDA;
-				feito = true;
+				if (proximoChar == '>') {
+					tipoAtual = Token.LAMBDA;
+					feito = true;
+
+				} else {
+					retoneparaBuffer(proximoChar);
+					tipoAtual = Token.OP;
+					valorAtual = Integer.valueOf(Token.SUB);
+					feito = true;
+				}
 
 		    }break;
 
@@ -601,15 +609,6 @@ public class AnalisadorLexico {
 		  }
 		  
 		}break;
-
-		  case 50: {
-			  if (caractere == '>') {
-				  feito = true;
-			  } else {
-				  retoneparaBuffer(caractere);
-				  feito = true;
-			  }
-		  } break;
 		
 		default: {
 						
