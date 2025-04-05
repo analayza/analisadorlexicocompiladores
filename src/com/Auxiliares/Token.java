@@ -27,6 +27,7 @@ public class Token {
   public static final int LITERALSTRING  = 18;
   public static final int LITERALCHAR = 19;
   public static final int PONTUACAO = 20;
+  public static final int LAMBDA = 21;
 
   
   // Valor fim de Arquivo
@@ -114,10 +115,8 @@ public class Token {
     String valorString = "-";
 
     switch( tipo ) {
-   
       case RELOP: valorString = tipoRelop( (Integer) valor);
           		   break;
-    
       case AT: valorString = "ATR";
                break;
      
@@ -213,8 +212,10 @@ public class Token {
 	    		    break;			
 
 	    case PONTUACAO: resultado = "pontuação";
-	    	        break;			
+	    	        break;
 
+        case LAMBDA: resultado = "lambda";
+                    break;
       }
 	
       return resultado;

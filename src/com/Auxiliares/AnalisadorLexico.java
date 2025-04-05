@@ -95,12 +95,11 @@ public class AnalisadorLexico {
 		    }break;
 
 		    case '-': {
-			      
-		      tipoAtual = Token.OP;
-			  valorAtual = Integer.valueOf( Token.SUB );
-			  
-		      feito = true;
-			  
+
+				estado = 50;
+				tipoAtual = Token.LAMBDA;
+				feito = true;
+
 		    }break;
 
 		    case '*': {
@@ -602,6 +601,15 @@ public class AnalisadorLexico {
 		  }
 		  
 		}break;
+
+		  case 50: {
+			  if (caractere == '>') {
+				  feito = true;
+			  } else {
+				  retoneparaBuffer(caractere);
+				  feito = true;
+			  }
+		  } break;
 		
 		default: {
 						

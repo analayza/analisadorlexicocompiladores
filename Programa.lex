@@ -6,4 +6,6 @@ int main(){
         printf("d", x);
     }
 
+    x -> x + 1
+
 }
