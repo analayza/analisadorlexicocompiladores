@@ -73,7 +73,7 @@ public class AnalisadorLexico {
 
 			  estado = 4;
 		      tipoAtual = Token.AT;
-		      valorAtual = new Integer( Token.ATR );
+		      valorAtual = Integer.valueOf( Token.ATR );
 		      
 		    }break;
 		    
@@ -81,14 +81,14 @@ public class AnalisadorLexico {
 
 		      estado = 7;
 		      tipoAtual = Token.LOG;
-		      valorAtual = new Integer( Token.NOT );
+		      valorAtual = Integer.valueOf( Token.NOT );
 		      
 		    }break;
 		    
 		    case '+': {
 		    	
 		      tipoAtual = Token.OP;
-		      valorAtual = new Integer( Token.AD );
+		      valorAtual = Integer.valueOf( Token.AD );
 		      
 		      feito = true;
 		      
@@ -97,7 +97,7 @@ public class AnalisadorLexico {
 		    case '-': {
 			      
 		      tipoAtual = Token.OP;
-			  valorAtual = new Integer( Token.SUB );
+			  valorAtual = Integer.valueOf( Token.SUB );
 			  
 		      feito = true;
 			  
@@ -106,7 +106,7 @@ public class AnalisadorLexico {
 		    case '*': {
 			  
 		      tipoAtual = Token.OP;
-			  valorAtual = new Integer( Token.MUL );
+			  valorAtual = Integer.valueOf( Token.MUL );
 			 
 			  feito = true;
 			  
@@ -133,7 +133,7 @@ public class AnalisadorLexico {
 		    case ',': {
 		    	
 			  tipoAtual = Token.PONTUACAO;
-			  valorAtual = new Integer( Token.VG );
+			  valorAtual = Integer.valueOf( Token.VG );
 			  
 			  feito = true;
 			  
@@ -142,7 +142,7 @@ public class AnalisadorLexico {
 		    case ';': {
 		    	
 			  tipoAtual = Token.PONTUACAO;
-			  valorAtual = new Integer( Token.PV );
+			  valorAtual = Integer.valueOf( Token.PV );
 			
 			  feito = true;
 			
@@ -151,7 +151,7 @@ public class AnalisadorLexico {
 		    case '(': {
 		    	
 			  tipoAtual = Token.PONTUACAO;
-			  valorAtual = new Integer( Token.AP );
+			  valorAtual = Integer.valueOf( Token.AP );
 			
 			  feito = true;
 
@@ -160,7 +160,7 @@ public class AnalisadorLexico {
 		    case ')': {
 		    	
 			  tipoAtual = Token.PONTUACAO;
-			  valorAtual = new Integer( Token.FP );
+			  valorAtual = Integer.valueOf( Token.FP );
 			
 			  feito = true;
 			  
@@ -170,7 +170,7 @@ public class AnalisadorLexico {
 		    	
 		    	
 			  tipoAtual = Token.PONTUACAO;
-			  valorAtual = new Integer( Token.AC );
+			  valorAtual = Integer.valueOf( Token.AC );
 			
 			  feito = true;
 				
@@ -179,7 +179,7 @@ public class AnalisadorLexico {
 		    case '}': {
 		    
 		      tipoAtual = Token.PONTUACAO;
-			  valorAtual = new Integer( Token.FC );
+			  valorAtual = Integer.valueOf( Token.FC );
 			
 			  feito = true;
 			
@@ -200,7 +200,7 @@ public class AnalisadorLexico {
 					
 		  if ( caractere == '=' ) {
 						
-		    valorAtual = new Integer( Token.LE );
+		    valorAtual = Integer.valueOf( Token.LE );
 			feito = true;
 			
 		  } else {
@@ -217,7 +217,7 @@ public class AnalisadorLexico {
 		  if ( caractere == '=' ) {
 		
 		    tipoAtual = Token.RELOP;
-		    valorAtual = new Integer( Token.EQ );
+		    valorAtual = Integer.valueOf( Token.EQ );
 			
 		    feito = true;//identifiquei um token, nao precisa continuar no while
 			
@@ -235,7 +235,7 @@ public class AnalisadorLexico {
 		  if ( caractere == '=' ) {
 						
 		    tipoAtual = Token.RELOP;  
-			valorAtual = new Integer( Token.NE );
+			valorAtual = Integer.valueOf( Token.NE );
 			feito = true;
 			
 		  } else {
@@ -251,7 +251,7 @@ public class AnalisadorLexico {
 			      
 		  if ( caractere == '=' ) {
 							
-			valorAtual = new Integer( Token.GE );
+			valorAtual = Integer.valueOf( Token.GE );
 			feito = true;
 			
 		  } else {
@@ -299,7 +299,7 @@ public class AnalisadorLexico {
 		  } else {
 			  
             tipoAtual = Token.OP;
-            valorAtual = new Integer( Token.DIV );
+            valorAtual = Integer.valueOf( Token.DIV );
             
 			retoneparaBuffer( caractere );
 			feito = true;
@@ -313,7 +313,7 @@ public class AnalisadorLexico {
 		  if( caractere == '&' ) {
 			  
 		    tipoAtual = Token.LOG;
-		    valorAtual = new Integer( Token.AND );
+		    valorAtual = Integer.valueOf( Token.AND );
 		    
 		    feito = true;
 		    
@@ -348,7 +348,7 @@ public class AnalisadorLexico {
 		  if( caractere == '|' ) {
 			   
 		    tipoAtual = Token.LOG;
-			valorAtual = new Integer( Token.OR );
+			valorAtual = Integer.valueOf( Token.OR );
 			
 		    feito = true;
 
@@ -446,7 +446,7 @@ public class AnalisadorLexico {
 
 		    retoneparaBuffer( caractere );  
 			
-		    valorAtual = new Integer( sBuffer.toString() );
+		    valorAtual = Integer.valueOf( sBuffer.toString() );
 			feito = true; 
 			
 		  }
