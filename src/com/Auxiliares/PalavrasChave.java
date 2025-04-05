@@ -15,6 +15,10 @@ public class PalavrasChave {
   private static final String STATIC = "static";
   private static final String VOID   = "void";
   private static final String WHILE = "while";
+  private static final String NULL = "null";
+  private static final String PUBLIC = "public";
+  private static final String DOUBLE = "double";
+  private static final String PRIVATE = "private";
     
   public static boolean isPalavraChave(StringBuffer palavra) {
 
@@ -22,7 +26,8 @@ public class PalavrasChave {
 	
     if ( palavra1.equals(CHAR) || palavra1.equals(ELSE) || palavra1.equals(FALSE) || palavra1.equals(INT) || palavra1.equals(IF)
       || palavra1.equals(MAIN) || palavra1.equals(OUT) || palavra1.equals(PRINTF) || palavra1.equals(RETURN)
-      || palavra1.equals(STATIC) || palavra1.equals(VOID) || palavra1.equals(WHILE) ) {
+      || palavra1.equals(STATIC) || palavra1.equals(VOID) || palavra1.equals(WHILE) || palavra1.equals(NULL)
+            || palavra1.equals(PUBLIC) || palavra1.equals(DOUBLE) || palavra1.equals(PRIVATE)) {
 	
       return true;
   
@@ -82,6 +87,21 @@ public class PalavrasChave {
         
       resultado = Token.VOID;
     	
+    }else if (palavra1.equals(NULL)) {
+      resultado = Token.NULL;
+
+    }
+    else if (palavra1.equals(PUBLIC)) {
+      resultado = Token.PUBLIC;
+
+    }
+    else if (palavra1.equals(DOUBLE)) {
+      resultado = Token.DOUBLE;
+
+    }
+    else if (palavra1.equals(PRIVATE)) {
+      resultado = Token.PRIVATE;
+
     } else {
         
       resultado = Token.WHILE;

@@ -28,6 +28,11 @@ public class Token {
   public static final int LITERALCHAR = 19;
   public static final int PONTUACAO = 20;
   public static final int LAMBDA = 21;
+  public static final int PRIVATE = 22; //aqui
+  public static final int DOUBLE = 23; //aqui
+  public static final int PUBLIC = 24; //aqui
+  public static final int NULL = 25; //aqui
+
 
   
   // Valor fim de Arquivo
@@ -216,6 +221,14 @@ public class Token {
 
         case LAMBDA: resultado = "lambda";
                     break;
+          case NULL: resultado = "null";
+              break;
+          case PUBLIC: resultado = "public";
+              break;
+          case DOUBLE: resultado = "double";
+              break;
+          case PRIVATE: resultado = "private";
+              break;
       }
 	
       return resultado;
