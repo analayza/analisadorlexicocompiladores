@@ -31,11 +31,11 @@ public class Token {
   public static final int PRIVATE = 22; //aqui
   public static final int DOUBLE = 23; //aqui
   public static final int PUBLIC = 24; //aqui
-  public static final int NULL = 25; //aqui
+  public static final int NULL = 25;//aqui
+  public static final int LONG = 26;
 
 
-  
-  // Valor fim de Arquivo
+    // Valor fim de Arquivo
   
   public static final int EOF   = 100;
 
