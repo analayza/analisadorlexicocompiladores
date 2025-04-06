@@ -17,7 +17,6 @@ public class Token {
   public static final int STATIC  = 9;
   public static final int VOID = 10;
   public static final int WHILE = 11;
-
   public static final int ID = 12;
   public static final int LITERALNUMERICO = 13;
   public static final int AT = 14;
@@ -34,6 +33,9 @@ public class Token {
   public static final int NULL = 25;//aqui
   public static final int LONG = 26;
   public static final int BREAK = 27;
+  public static final int FOR = 28;
+  public static final int TRUE = 29;
+  public static final int FLOAT = 30;
 
 
     // Valor fim de Arquivo
@@ -230,6 +232,15 @@ public class Token {
               break;
           case PRIVATE: resultado = "private";
               break;
+
+          case FOR: resultado = "for";
+                break;
+
+          case TRUE: resultado = "true";
+                break;
+
+          case FLOAT: resultado = "float";
+                break;
       }
 	
       return resultado;

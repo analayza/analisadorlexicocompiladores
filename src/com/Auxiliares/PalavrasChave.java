@@ -20,6 +20,9 @@ public class PalavrasChave {
   private static final String PRIVATE = "private";
   private static final String LONG = "long";
   private static final String BREAK = "break";
+  private static final String FOR = "for";
+  private static final String TRUE = "true";
+  private static final String FLOAT = "float";
 
   public static boolean isPalavraChave(StringBuffer palavra) {
 
@@ -29,7 +32,7 @@ public class PalavrasChave {
             || palavra1.equals(MAIN) || palavra1.equals(OUT) || palavra1.equals(PRINTF) || palavra1.equals(RETURN)
             || palavra1.equals(STATIC) || palavra1.equals(VOID) || palavra1.equals(WHILE) || palavra1.equals(NULL)
             || palavra1.equals(PUBLIC) || palavra1.equals(DOUBLE) || palavra1.equals(PRIVATE)
-            || palavra1.equals(LONG) || palavra1.equals(BREAK)) {
+            || palavra1.equals(LONG) || palavra1.equals(BREAK) || palavra1.equals(FOR) || palavra1.equals(TRUE) || palavra1.equals(FLOAT)) {
 
       return true;
     }
@@ -93,6 +96,15 @@ public class PalavrasChave {
 
     } else if (palavra1.equals(BREAK)) {
       resultado = Token.BREAK;
+
+    } else if (palavra1.equals(FOR)) {
+      resultado = Token.FOR;
+
+    } else if (palavra1.equals(TRUE)) {
+      resultado = Token.TRUE;
+
+    } else if (palavra1.equals(FLOAT)) {
+      resultado = Token.FLOAT;
 
     } else {
       resultado = Token.WHILE;

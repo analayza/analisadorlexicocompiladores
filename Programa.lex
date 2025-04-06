@@ -12,4 +12,8 @@ int main(){
     private
     public
 
+    float
+    true
+    for
+
 }
