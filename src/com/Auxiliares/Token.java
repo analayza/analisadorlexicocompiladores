@@ -33,6 +33,7 @@ public class Token {
   public static final int PUBLIC = 24; //aqui
   public static final int NULL = 25;//aqui
   public static final int LONG = 26;
+  public static final int BREAK = 27;
 
 
     // Valor fim de Arquivo
