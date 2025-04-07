@@ -12,8 +12,12 @@ int main(){
     private
     public
 
+    long
+    break
+
     float
     true
     for
+
 
 }

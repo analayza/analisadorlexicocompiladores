@@ -233,6 +233,12 @@ public class Token {
           case PRIVATE: resultado = "private";
               break;
 
+          case LONG: resultado = "long";
+              break;
+
+          case BREAK: resultado = "break";
+              break;
+
           case FOR: resultado = "for";
                 break;
 
