@@ -436,31 +436,28 @@ public class AnalisadorLexico {
 		  }
 
 		}break;
-		
-		case 39: {
-		  
-		  if ( Character.isDigit( caractere ) ) {
-				
-		    estado = 39;
-			sBuffer.append( ( char) caractere );
-			
-		  }
-		  /*else if(Character.isLetter(caractere)) {
-			  throw new LexerException();
-			  
-		  }*/
-		  else {
 
-		    retoneparaBuffer( caractere );  
-			
-		    valorAtual = Integer.valueOf( sBuffer.toString() );
-			feito = true; 
-			
-		  }
-	
-		}break;
-		
-		case 41: {
+		  case 39: {
+
+			  if ( Character.isDigit( caractere ) ) {
+				  sBuffer.append((char) caractere);
+				  estado = 39;
+
+			  } else if (caractere == '.') {
+				  sBuffer.append((char) caractere);
+				  estado = 45; // novo estado para parte decimal
+
+			  } else {
+				  retoneparaBuffer(caractere);
+				  valorAtual = Integer.valueOf(sBuffer.toString());
+				  tipoAtual = Token.LITERALNUMERICO;
+				  feito = true;
+			  }
+
+		  } break;
+
+
+		  case 41: {
 			
 		  if( caractere == '\'' ) {
 			 
@@ -534,8 +531,24 @@ public class AnalisadorLexico {
 		  }
 		  
 		}break;
-		
-		case 46: {
+
+		  case 45: {
+
+			  if (Character.isDigit(caractere)) {
+				  sBuffer.append((char) caractere);
+				  estado = 45;
+
+			  } else {
+				  retoneparaBuffer(caractere);
+				  valorAtual = Float.valueOf(sBuffer.toString());
+				  tipoAtual = Token.FLOAT;
+				  feito = true;
+			  }
+
+		  } break;
+
+
+		  case 46: {
 			
 	      if( caractere == '"' ) {
 	    	

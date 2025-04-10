@@ -15,7 +15,7 @@ int main(){
     long
     break
 
-    float
+    float num = 3.14;
     true
     for
 
