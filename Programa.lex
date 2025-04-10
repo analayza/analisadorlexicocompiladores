@@ -8,13 +8,12 @@ int main(){
 
     x -> x + 1
     int y = null
-    double g = 56
+    final x = 1;
     private
     public
 
     long
     break
-
     float num = 3.14;
     true
     for

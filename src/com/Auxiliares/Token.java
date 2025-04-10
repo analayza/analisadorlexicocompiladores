@@ -27,10 +27,10 @@ public class Token {
   public static final int LITERALCHAR = 19;
   public static final int PONTUACAO = 20;
   public static final int LAMBDA = 21;
-  public static final int PRIVATE = 22; //aqui
-  public static final int DOUBLE = 23; //aqui
-  public static final int PUBLIC = 24; //aqui
-  public static final int NULL = 25;//aqui
+  public static final int PRIVATE = 22;
+  public static final int FINAL = 23;
+  public static final int PUBLIC = 24;
+  public static final int NULL = 25;
   public static final int LONG = 26;
   public static final int BREAK = 27;
   public static final int FOR = 28;
@@ -228,7 +228,7 @@ public class Token {
               break;
           case PUBLIC: resultado = "public";
               break;
-          case DOUBLE: resultado = "double";
+          case FINAL: resultado = "final";
               break;
           case PRIVATE: resultado = "private";
               break;
