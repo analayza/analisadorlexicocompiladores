@@ -445,7 +445,7 @@ public class AnalisadorLexico {
 
 			  } else if (caractere == '.') {
 				  sBuffer.append((char) caractere);
-				  estado = 45; // novo estado para parte decimal
+				  estado = 45;
 
 			  } else {
 				  retoneparaBuffer(caractere);
