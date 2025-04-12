@@ -18,6 +18,7 @@ public class AnalisadorLexico {
   private int buffer;
   private boolean bufferValid = false;
 
+
   public AnalisadorLexico(BufferedReader reader) {
 		
 	this.reader = reader;
@@ -95,18 +96,7 @@ public class AnalisadorLexico {
 		    }break;
 
 		    case '-': {
-				int proximoChar = pegardoBuffer();
-
-				if (proximoChar == '>') {
-					tipoAtual = Token.LAMBDA;
-					feito = true;
-
-				} else {
-					retoneparaBuffer(proximoChar);
-					tipoAtual = Token.OP;
-					valorAtual = Integer.valueOf(Token.SUB);
-					feito = true;
-				}
+				estado = 51;
 
 		    }break;
 
@@ -606,7 +596,20 @@ public class AnalisadorLexico {
 		  }
 		  
 		}break;
-		
+
+		  case 51: {
+			  if (caractere == '>') {
+				  tipoAtual = Token.LAMBDA;
+				  feito = true;
+
+			  } else {
+				  retoneparaBuffer(caractere);
+				  tipoAtual = Token.OP;
+				  valorAtual = Integer.valueOf(Token.SUB);
+				  feito = true;
+			  }
+		  }break;
+
 		case 49: {
 			
 		  if( caractere == '"' ) {
@@ -622,7 +625,7 @@ public class AnalisadorLexico {
 		  }
 		  
 		}break;
-		
+
 		default: {
 						
 		  throw new Error("Estado nao esperado!!!");
